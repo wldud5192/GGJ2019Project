@@ -83,12 +83,15 @@ public class Meteor : MonoBehaviour
                 isMoving = false;
             }
 
+<<<<<<< HEAD
             if (collision.gameObject.tag == "Player")
             {
                 targetScript.BuildUp();
                 Destroy(gameObject);
             }
 
+=======
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 
         }
 
@@ -100,12 +103,15 @@ public class Meteor : MonoBehaviour
                 //Timer = true;
             }
 
+<<<<<<< HEAD
             if (collision.gameObject.tag == "Player")
             {
                 targetScript.HealPlanet();
                 Destroy(gameObject);
             }
 
+=======
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 
         }
     }
