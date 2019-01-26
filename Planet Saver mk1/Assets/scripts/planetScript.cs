@@ -44,7 +44,7 @@ public class planetScript : MonoBehaviour
             currentLevel = currentLevel - 1;
         }
         //if not then the planet will take damage
-        if (currentHealth < minHealth)
+        if (currentHealth > minHealth)
         {
             currentHealth = currentHealth-1;
 

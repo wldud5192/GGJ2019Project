@@ -5,6 +5,7 @@ using UnityEngine;
 public class Meteor : MonoBehaviour
 {
     public GameObject target;
+    public GameObject avatar;
     public float speed = 0.5f;
     public float rotateSpeed;
     private Vector2 startPosition;
@@ -12,10 +13,12 @@ public class Meteor : MonoBehaviour
     public bool buildUp;
     public bool damage;
     public Collider2D thisOne;
-    public Collider2D Planet;
-    public Collider2D Avatar;
+
     planetScript targetScript;
-    private bool isMoving = true;
+    public bool isMoving = true;
+
+    public bool startTimer = false;
+    public float pickUpTimer = 15f;
 
     
 
@@ -52,9 +55,38 @@ public class Meteor : MonoBehaviour
         
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-           
+        if (damage == true)
+        {
+            if (collision.gameObject.tag == "planet")
+            {
+                targetScript.TakeDamage();
+                Destroy(gameObject);
+            }
+        }
+
+        if (buildUp == true)
+        {
+            if (collision.gameObject.tag == "planet")
+            {
+                isMoving = false;
+            }
+
+
+        }
+
+        if (heal == true)
+        {
+            if (collision.gameObject.tag == "planet")
+            {
+                isMoving = false;
+                //Timer = true;
+            }
+
+
+        }
     }
 
 }
