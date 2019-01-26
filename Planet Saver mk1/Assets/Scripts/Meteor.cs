@@ -74,6 +74,11 @@ public class Meteor : MonoBehaviour
                 isMoving = false;
             }
 
+            if (collision.gameObject.tag == "Player")
+            {
+                targetScript.BuildUp();
+            }
+
 
         }
 
@@ -83,6 +88,11 @@ public class Meteor : MonoBehaviour
             {
                 isMoving = false;
                 //Timer = true;
+            }
+
+            if (collision.gameObject.tag == "Player")
+            {
+                targetScript.HealPlanet();
             }
 
 
