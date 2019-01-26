@@ -23,13 +23,12 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	Shoot();
-    	if (fireRate == 0){
-    		if (Input.GetKeyDown(KeyCode.S))	{
+        if (fireRate == 0){
+    		if (Input.GetKeyDown(KeyCode.Mouse0))	{
     		}
     	}    
     	else {
-    		if (Input.GetKeyDown(KeyCode.S) && Time.time > timeToFire)	{
+    		if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > timeToFire)	{
     			timeToFire = Time.time + 1/fireRate;
     			Shoot();
 			}

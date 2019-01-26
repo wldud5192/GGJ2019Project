@@ -24,10 +24,10 @@ public class dudeMove : MonoBehaviour {
     void MoveAround()
     {
 
-	if (Input.GetKey (KeyCode.A)) {
+	if (Input.GetKey (KeyCode.LeftArrow)) {
 	 	transform.RotateAround(Planet.transform.position, Vector3.forward, speed * Time.deltaTime); //LEFT
 		}
-	if (Input.GetKey (KeyCode.D)) {
+	if (Input.GetKey (KeyCode.RightArrow)) {
 	 	transform.RotateAround(Planet.transform.position, Vector3.back, speed * Time.deltaTime); //RIGHT
 		}
 
