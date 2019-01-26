@@ -29,9 +29,14 @@ public class planetScript : MonoBehaviour
     void Update()
     {
         //this code will make sure that the death event happens if the health is 0
-        if (currentHealth <= 0)
+        if (currentHealth <= minHealth)
         {
             Death();
+        }
+
+        if (currentLevel >= maxBuildingLevel)
+        {
+            Win();
         }
 
     }
@@ -89,5 +94,10 @@ public class planetScript : MonoBehaviour
 
     public void Death(){
         Debug.Log("You Dead!");
+    }
+
+    public void Win()
+    {
+        Debug.Log("You Won!");
     }
 }

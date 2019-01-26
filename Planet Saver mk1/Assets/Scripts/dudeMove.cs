@@ -27,12 +27,21 @@ public class dudeMove : MonoBehaviour {
 
     void MoveAround()
     {
+<<<<<<< HEAD
+
+	if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+=======
         
 	if (Input.GetKey (KeyCode.A)) {
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 	 	transform.RotateAround(Planet.transform.position, Vector3.forward, speed * Time.deltaTime); //LEFT
             rend.flipX = false;
 		}
+<<<<<<< HEAD
+	if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+=======
 	if (Input.GetKey (KeyCode.D)) {
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 	 	transform.RotateAround(Planet.transform.position, Vector3.back, speed * Time.deltaTime); //RIGHT
             rend.flipX = true;
 		}

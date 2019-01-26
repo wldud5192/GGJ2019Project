@@ -18,9 +18,8 @@ public class Meteor : MonoBehaviour
     public bool isMoving = true;
 
     public bool startTimer = false;
-    public float pickUpTimer = 15f;
+    public float pickUpTimer = 5f;
 
-    
 
 
     // Start is called before the first frame update
@@ -30,6 +29,7 @@ public class Meteor : MonoBehaviour
         startPosition = this.transform.position;
         targetScript = target.GetComponent<planetScript>();
 
+       
         //Vector2 direction = ((Vector2)target.transform.position - startPosition);
         //Quaternion heading = Quaternion.LookRotation(direction);
         //transform.rotation = Quaternion.RotateTowards(transform.rotation, heading, 400 * Time.deltaTime);
@@ -52,6 +52,15 @@ public class Meteor : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, heading, 360 * Time.deltaTime);
         }
 
+        if (isMoving == false)
+        {
+            pickUpTimer -= Time.deltaTime;
+
+            if (pickUpTimer <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         
 
     }
@@ -74,6 +83,15 @@ public class Meteor : MonoBehaviour
                 isMoving = false;
             }
 
+<<<<<<< HEAD
+            if (collision.gameObject.tag == "Player")
+            {
+                targetScript.BuildUp();
+                Destroy(gameObject);
+            }
+
+=======
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 
         }
 
@@ -85,6 +103,15 @@ public class Meteor : MonoBehaviour
                 //Timer = true;
             }
 
+<<<<<<< HEAD
+            if (collision.gameObject.tag == "Player")
+            {
+                targetScript.HealPlanet();
+                Destroy(gameObject);
+            }
+
+=======
+>>>>>>> 05c50e5f9b03e9bac94fdd74dae787864b34d55d
 
         }
     }
