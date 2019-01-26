@@ -5,11 +5,15 @@ using UnityEngine;
  
 public class dudeMove : MonoBehaviour {
 
+    SpriteRenderer rend;
+    Animator anim;
 	public GameObject Planet;
 	public float speed;
 	// private Vector3 endPosition = new Vector3(-6, -4, 0);
 
     void Start(){
+        rend = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update() 
@@ -23,13 +27,24 @@ public class dudeMove : MonoBehaviour {
 
     void MoveAround()
     {
-
+        
 	if (Input.GetKey (KeyCode.A)) {
 	 	transform.RotateAround(Planet.transform.position, Vector3.forward, speed * Time.deltaTime); //LEFT
+            rend.flipX = false;
 		}
 	if (Input.GetKey (KeyCode.D)) {
 	 	transform.RotateAround(Planet.transform.position, Vector3.back, speed * Time.deltaTime); //RIGHT
+            rend.flipX = true;
 		}
+
+    if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.D))
+        {
+            anim.SetBool("IsWalking", true);
+        } else
+        {
+            anim.SetBool("IsWalking", false);
+        }
+
 
 	}
 
