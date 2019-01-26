@@ -36,7 +36,7 @@ public class planetScript : MonoBehaviour
 
     }
     //the method to take damage
-    void TakeDamage()
+    public void TakeDamage()
     {
         // if there are buildings they will be taken down a level
         if (currentLevel > minBuildingLevel)
@@ -58,7 +58,7 @@ public class planetScript : MonoBehaviour
         }
     }
 
-    void HealPlanet()
+    public void HealPlanet()
     {
         if (currentHealth < maxHealth)
         {
@@ -73,7 +73,7 @@ public class planetScript : MonoBehaviour
 
     }
 
-    void BuildUp()
+    public void BuildUp()
     {
         if (currentLevel < maxBuildingLevel)
         {
@@ -87,7 +87,7 @@ public class planetScript : MonoBehaviour
         }
     }
 
-    void Death(){
+    public void Death(){
         Debug.Log("You Dead!");
     }
 }
