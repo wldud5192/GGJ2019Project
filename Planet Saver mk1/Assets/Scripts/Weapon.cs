@@ -26,7 +26,6 @@ public class Weapon : MonoBehaviour
     	Shoot();
     	if (fireRate == 0){
     		if (Input.GetKeyDown(KeyCode.S))	{
-    			Shoot();
     		}
     	}    
     	else {
@@ -45,6 +44,7 @@ public class Weapon : MonoBehaviour
     	Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.red);
     	if (hit.collider != null)	{
     		Debug.DrawLine(firePointPosition, hit.point, Color.blue);
+            Debug.Log("We hit" + hit.collider.name + " and did " + Damage + " damage.");
     	}
     }
 }
