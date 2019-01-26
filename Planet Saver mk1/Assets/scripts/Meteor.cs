@@ -16,8 +16,11 @@ public class Meteor : MonoBehaviour
     public Collider2D Avatar;
     planetScript targetScript;
     private bool isMoving = true;
-    // Start is called before the first frame update
 
+    
+
+
+    // Start is called before the first frame update
         //quaternion.lookrotation might be your best bet to make the meteors point towards the planet
     void Start()
     {
@@ -46,21 +49,12 @@ public class Meteor : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, heading, 360 * Time.deltaTime);
         }
 
-        OnTriggerEnter(Planet);
-
-    }
-
-    private void OnTriggerEnter(Collider2D other)
-    {
         
-        if (damage == true)
-        {
-            targetScript.TakeDamage();
-        }
-
-        else{
-            isMoving = false;
-        }
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+           
+    }
+
 }
